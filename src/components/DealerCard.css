@@ -1,0 +1,23 @@
+.dealer-page {
+	width: 20rem;
+	padding: 3em 1em;
+
+	border-radius: .2rem;
+	background: #eee;
+	box-shadow: .0625rem .125rem .5rem #888;
+}
+
+.dealer-page p {
+	display: flex;
+	align-items: center;
+}
+
+.dealer-page button {
+	margin-left: auto;
+	padding: .5em;
+
+	color: #fff;
+	border: none;
+	border-radius: .3rem;
+	background: cornflowerblue;
+}
