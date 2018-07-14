@@ -6,18 +6,16 @@ export default class DealerProfile extends Component {
 		return (
 			<div className="dealer-profile">
 				<DealerContext.Consumer>
-					{context => {
-						let btnText = 'edit'
-						if (context.state.editing) {
-							btnText = 'save'
-						}
+					{({ toggleEditing, state: { editing, name, dealerId } }) => {
+						const btnText = editing ? 'save' : 'edit'
+
 						return (
 							<React.Fragment>
 								<p>
-									Name: {context.state.name}
-									<button onClick={context.toggleEditing}>{btnText}</button>
+									Name: {name}
+									<button onClick={toggleEditing}>{btnText}</button>
 								</p>
-								<p>Dealer ID: {context.state.dealerId}</p>
+								<p>Dealer ID: {dealerId}</p>
 							</React.Fragment>
 						)
 					}}

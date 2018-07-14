@@ -15,14 +15,10 @@ export default class DealerProvider extends Component {
 				value={{
 					state: this.state,
 					updateDealerName: value => {
-						this.setState({ name: value.target.value })
+						this.setState({ name: value })
 					},
 					toggleEditing: () => {
-						if (this.state.editing) {
-							this.setState({ editing: false })
-						} else {
-							this.setState({ editing: true })
-						}
+						this.setState(prevState => ({ editing: !prevState.editing }))
 					},
 				}}
 			>

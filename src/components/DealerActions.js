@@ -5,15 +5,15 @@ export default class DealerActions extends Component {
 	render() {
 		return (
 			<DealerContext.Consumer>
-				{context => (
+				{({ updateDealerName, state: { editing, name } }) => (
 					<React.Fragment>
-						{context.state.editing ? (
+						{editing && (
 							<input
 								type="text"
-								defaultValue={context.state.name}
-								onChange={context.updateDealerName.bind(this)}
+								defaultValue={name}
+								onChange={({ target: { value } }) => updateDealerName(value)}
 							/>
-						) : null}
+						)}
 					</React.Fragment>
 				)}
 			</DealerContext.Consumer>
